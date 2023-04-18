@@ -14,8 +14,6 @@ function Transactions() {
         })
     }, [])
 
-    console.log(transactions)
-
     return (
         <div className='transactions'>
             <section>

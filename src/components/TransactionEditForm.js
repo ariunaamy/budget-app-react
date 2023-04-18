@@ -25,7 +25,9 @@ function TransactionEditForm() {
     setTransaction({ ...transaction, [event.target.id]: event.target.value });
   };
 
-
+//   const handleCategoryDropdown = () => {
+//     setBookmark({ ...bookmark, isFavorite: !bookmark.isFavorite });
+//   };
 
  useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/transactions/${index}`).then((res) => {
@@ -39,7 +41,7 @@ function TransactionEditForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.put(`${process.env.REACT_APP_API_name}/transactions/${index}`, transaction)
+      axios.put(`${process.env.REACT_APP_API_URL}/transactions/${index}`, transaction)
     .then((res)=>{
       setTransaction(res.data);
       navigate(`/transactions/${index}`)
@@ -55,12 +57,11 @@ function TransactionEditForm() {
           value={transaction.date}
           type="text"
           onChange={handleTextChange}
-          placeholder="Name of Website"
           required
         />
         <label htmlFor="name">Name</label>
         <input
-          id="name"
+          id="item_name"
           type="text"
           value={transaction.item_name}
           onChange={handleTextChange}
@@ -83,6 +84,15 @@ function TransactionEditForm() {
           checked={transaction.from}
           placeholder="food, entertainment, ..."
         />
+        <label for="category">Category</label>
+        <select id="category" onChange={handleTextChange}>
+            <option value="Income">Income</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Health and Fitness">Health and Fitness</option>
+            <option value="Food and Dining">Food and Dining</option>
+            <option value="Education">Education</option>
+        </select>
         <br />
         <input type="submit"/>
       </form>

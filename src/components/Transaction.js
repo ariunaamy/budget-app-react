@@ -3,20 +3,29 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import "./Transaction.css"
 import { Link } from 'react-router-dom';
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 
 
 function Transaction() {
     const [transaction, setTransaction] = useState({})
     let { index } = useParams();
+    let navigate = useNavigate();
     
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/transactions/${index}`).then((res) => {
             setTransaction(res.data)
         })
     }, [])
-  
+
+    const handleDelete = () => {
+        axios.delete(`${process.env.REACT_APP_API_URL}/transactions/${index}`).then((res) => {
+            navigate("/transactions")
+        })
+    }
+
+
   return (
     <div className='transaction'>
         <div className='heading'>
@@ -31,7 +40,7 @@ function Transaction() {
           <div className='buttons'>
               <button><Link to="/transactions">Back</Link></button>
               <button><Link to={`/transactions/${index}/edit`}>Edit</Link></button>
-              <button>Delete</button>
+              <button onClick={handleDelete}>Delete</button>
           </div>
     </div>
   )
