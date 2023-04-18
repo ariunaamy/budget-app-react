@@ -1,0 +1,33 @@
+.banner {
+    background-color: #d76b6b;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner button {
+    color: white;
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: bold;
+    background: none;
+    border: 1px solid white;
+    border-radius: 2px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.banner button:hover {
+    padding: 10px 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.banner a {
+    text-decoration: none;
+    color: white;
+}

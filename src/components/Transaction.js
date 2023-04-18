@@ -2,10 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import "./Transaction.css"
+import { Link } from 'react-router-dom';
+import { useParams } from "react-router-dom"
 
 
-function Transaction({index}) {
+
+function Transaction() {
     const [transaction, setTransaction] = useState({})
+    let { index } = useParams();
     
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API_URL}/transactions/${index}`).then((res) => {
@@ -25,10 +29,9 @@ function Transaction({index}) {
         <p><strong>Category: </strong>{transaction.category}</p>
           </div>
           <div className='buttons'>
-              <button>Back</button>
-              <button>Edit</button>
+              <button><Link to="/transactions">Back</Link></button>
+              <button><Link to={`/transactions/${index}/edit`}>Edit</Link></button>
               <button>Delete</button>
-
           </div>
     </div>
   )
