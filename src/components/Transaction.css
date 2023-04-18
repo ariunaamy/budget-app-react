@@ -15,3 +15,17 @@
  h3 {
     color: grey;
  }
+
+ .buttons button {
+    margin-top: 3%;
+    color: black;
+    border: 2px solid grey;
+    margin: 15px;
+ }
+
+ .buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 30%;
+    margin: auto;
+ }

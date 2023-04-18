@@ -23,7 +23,13 @@ function Transaction({index}) {
         <p><strong>Amount: </strong>{transaction.amount}</p>
         <p><strong>Date: </strong>{transaction.date}</p>
         <p><strong>Category: </strong>{transaction.category}</p>
-        </div>
+          </div>
+          <div className='buttons'>
+              <button>Back</button>
+              <button>Edit</button>
+              <button>Delete</button>
+
+          </div>
     </div>
   )
 }
