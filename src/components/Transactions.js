@@ -19,13 +19,13 @@ function Transactions() {
             <section>
                 <table>
                     <tbody>
-                    {transactions.map((item, index) => (
+                    {transactions ? transactions.map((item, index) => (
                         <tr key={index}>
                             <td>{item.date}</td>
                             <td><Link to={`/transactions/${index}`}>{item.item_name}</Link></td>
                             <td>{item.amount}</td>
                         </tr>
-                    ))}
+                    )): null}
                     </tbody>
                 </table>
                 
