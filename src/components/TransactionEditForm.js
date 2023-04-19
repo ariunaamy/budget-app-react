@@ -33,7 +33,7 @@ function TransactionEditForm() {
        setTransaction(res.data)
       console.log(res)
     })
-}, [])
+}, [index])
     // .catch((error)=>{
     //   console.log(error);
     // }
