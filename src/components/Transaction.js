@@ -17,7 +17,7 @@ function Transaction() {
         axios.get(`${process.env.REACT_APP_API_URL}/transactions/${index}`).then((res) => {
             setTransaction(res.data)
         })
-    }, [])
+    }, [index])
 
     const handleDelete = () => {
         axios.delete(`${process.env.REACT_APP_API_URL}/transactions/${index}`).then((res) => {
