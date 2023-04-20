@@ -70,6 +70,7 @@ function TransactionNewForm() {
                   <label htmlFor="category">Category</label>
         <select id="category" onChange={handleTextChange}>
             <option value="Income">Income</option>
+            <option value="Utilities">Utilities</option>
             <option value="Entertainment">Entertainment</option>
             <option value="Shopping">Shopping</option>
             <option value="Health and Fitness">Health and Fitness</option>
