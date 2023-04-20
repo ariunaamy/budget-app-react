@@ -93,7 +93,7 @@ function TransactionEditForm() {
             <option value="Education">Education</option>
         </select>
         <br />
-        <input type="submit"/>
+        <input className='submit' type="submit"/>
       </form>
     </div>
   )

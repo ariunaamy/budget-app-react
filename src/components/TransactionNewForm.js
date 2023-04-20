@@ -1,4 +1,4 @@
-//import { uuid } from 'uuidv4';
+import { v4 } from 'uuid'
 import React from 'react';
 import axios from "axios";
 import { useState} from "react";
@@ -7,7 +7,7 @@ import "./TransactionEditForm.css"
 
 function TransactionNewForm() {
     const [transaction, setTransaction] = useState({
-        id: "",
+        id: v4(),
         item_name: "",
         amount: 0,
         date: "",
@@ -20,10 +20,7 @@ function TransactionNewForm() {
       const handleTextChange = (event) => {
         setTransaction({ ...transaction, [event.target.id]: event.target.value });
       };
-    
-    //   const handleCategoryDropdown = () => {
-    //     setBookmark({ ...bookmark, isFavorite: !bookmark.isFavorite });
-    //   };
+
     
       const handleSubmit = (event) => {
         event.preventDefault();
@@ -56,7 +53,7 @@ function TransactionNewForm() {
         <label htmlFor="amount">Amount</label>
         <input
           id="amount"
-          type="text"
+          type="number"
           name="category"
           value={transaction.amount}
           onChange={handleTextChange}
@@ -70,7 +67,7 @@ function TransactionNewForm() {
           checked={transaction.from}
           placeholder="food, entertainment, ..."
         />
-        <label for="category">Category</label>
+                  <label htmlFor="category">Category</label>
         <select id="category" onChange={handleTextChange}>
             <option value="Income">Income</option>
             <option value="Entertainment">Entertainment</option>
@@ -80,7 +77,7 @@ function TransactionNewForm() {
             <option value="Education">Education</option>
         </select>
         <br />
-        <input type="submit"/>
+        <input className='submit' type="submit"/>
       </form>
     </div>
     </div>

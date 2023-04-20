@@ -1,33 +1,64 @@
-.banner {
-    background-color: #d76b6b;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 3em;
 }
 
-.banner button {
-    color: white;
-    display: inline-block;
-    padding: 12px 24px;
-    font-weight: bold;
-    background: none;
-    border: 1px solid white;
-    border-radius: 2px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+.button_box h1 {
+  margin-top: -5%;
 }
 
-.banner button:hover {
-    padding: 10px 20px;
-    transition: transform 0.2s ease-in-out;
+.home_background {
+  height: 100vh;
+  background: linear-gradient(to bottom, #e3ffe7 0%, #8db6fb 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.banner a {
-    text-decoration: none;
-    color: white;
+.button_box {
+  margin-top: -15%;
+  padding: 6%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border: 3px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.button_box a {
+  text-decoration: none;
+  color: rgb(9, 0, 0);
+  font-size: 1.5em;
+}
+
+button {
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: rgb(107, 207, 134);
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  color: white; /* Add this line to change the font color on hover */
+}
+
+.button_box button {
+  width: 42%;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(0, 0, 0);
+}
+
+.button_box button:hover {
+  background-color: rgb(107, 207, 134);
+  color: white;
+}
+
+.button_box button a{
+    color: white; 
 }

@@ -1,19 +1,20 @@
+import "./Home.css";
+import { Link } from "react-router-dom";
 import "./Home.css"
-import { Link } from "react-router-dom"
+
 
 function Home() {
     return (
-        <div className="home">
-            <div className="banner">
+            <div className="home_background">
+                <div className="button_box">
                 <h1>Welcome to Budget App</h1>
                 <button>
                     <Link to="/transactions">
                         See all transactions
                     </Link>
-                </button>
-            </div>
+                </button>  
+                </div> 
         </div>
-
     )
 }
 
